@@ -1,0 +1,854 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" agent="Codex - revisión repositorios 2026-10-16" compressed="false" pages="9" modified="2026-10-25T00:00:00Z">
+  <diagram id="CU1" name="CU1 - Registro, autenticación y dispositivos">
+    <mxGraphModel dx="1338" dy="809" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="head" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#173B70;strokeColor=#173B70;fontColor=#FFFFFF;fontStyle=1;fontSize=15;align=center;verticalAlign=middle;" value="CU1 - Gestión de Registro e Inicio de Sesión&#10;RF1 · RF1.1 · RF1.2 · RF1.2.1 · RF1.2.2 · RF1.2.3 · RF1.3 · RF1.4" vertex="1">
+          <mxGeometry height="66" width="860" x="165" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="boundary" parent="1" style="shape=mxgraph.uml.systemBoundary;whiteSpace=wrap;html=1;fontSize=12;fontStyle=1;verticalAlign=top;align=center;fillColor=#F6F9FD;" value="Sistema - GPS Guardian Escolar" vertex="1">
+          <mxGeometry height="610" width="900" x="170" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="foot" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFD;strokeColor=#C4D0E1;fontColor=#5B6472;fontStyle=2;fontSize=9;align=center;verticalAlign=middle;" value="El equipo se valida antes del reto 2FA y al verificarlo. Cambiar correo o contraseña cierra sesiones. No se implementa bloqueo temporal por intentos." vertex="1">
+          <mxGeometry height="48" width="900" x="170" y="750" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="Padre o acudiente" vertex="1">
+          <mxGeometry height="90" width="60" x="55" y="372" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="Servicio de correo" vertex="1">
+          <mxGeometry height="90" width="60" x="1080" y="277" as="geometry" />
+        </mxCell>
+        <mxCell id="nregistro" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" value="Registrar cuenta&#10;(RF1.1)" vertex="1">
+          <mxGeometry height="58" width="205" x="257.5" y="253" as="geometry" />
+        </mxCell>
+        <mxCell id="nlogin" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" value="Iniciar sesión&#10;(RF1.3)" vertex="1">
+          <mxGeometry height="58" width="205" x="257.5" y="513" as="geometry" />
+        </mxCell>
+        <mxCell id="nrecuperar" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" value="Recuperar contraseña&#10;(RF1.4)" vertex="1">
+          <mxGeometry height="58" width="205" x="257.5" y="383" as="geometry" />
+        </mxCell>
+        <mxCell id="nvalidar" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" value="Validar datos, correo y&#10;aceptación de términos (RF1.2)" vertex="1">
+          <mxGeometry height="58" width="225" x="547.5" y="188" as="geometry" />
+        </mxCell>
+        <mxCell id="nclave" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" value="Aplicar política de&#10;contraseña segura (RF1.2.2)" vertex="1">
+          <mxGeometry height="58" width="235" x="542.5" y="318" as="geometry" />
+        </mxCell>
+        <mxCell id="ncorreo" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" value="Enviar verificación de&#10;correo con returnUrl (RF1.2.1)" vertex="1">
+          <mxGeometry height="58" width="225" x="817.5" y="233" as="geometry" />
+        </mxCell>
+        <mxCell id="nenlace" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" value="Enviar enlace seguro de&#10;restablecimiento" vertex="1">
+          <mxGeometry height="58" width="225" x="817.5" y="413" as="geometry" />
+        </mxCell>
+        <mxCell id="nbloqueo" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" value="Confirmar inicio en&#10;un dispositivo nuevo" vertex="1">
+          <mxGeometry height="58" width="260" x="535" y="633" as="geometry" />
+        </mxCell>
+        <mxCell id="nerrores" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" value="Gestionar errores de&#10;autenticación (RF1.2.3)" vertex="1">
+          <mxGeometry height="58" width="225" x="552.5" y="488" as="geometry" />
+        </mxCell>
+        <mxCell id="nfactor" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" value="Confirmar segundo factor&#10;por correo" vertex="1">
+          <mxGeometry height="58" width="220" x="820" y="558" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="a1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" target="nregistro" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="a1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" target="nlogin" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="a1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" target="nrecuperar" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="a2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" target="ncorreo" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="a2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" target="nenlace" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="a2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" target="nfactor" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="nregistro" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" target="nvalidar" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="nregistro" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" target="nclave" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="nregistro" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" target="ncorreo" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="nrecuperar" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" target="nclave" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="nrecuperar" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" target="nenlace" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="nerrores" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" target="nlogin" value="«extend»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" edge="1" parent="1" source="nbloqueo" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" target="nlogin" value="«extend»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" edge="1" parent="1" source="nfactor" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" target="nlogin" value="«extend»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e15" edge="1" parent="1" source="a2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" target="nbloqueo" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="CU2" name="CU2 - Gestión y vinculación de estudiantes">
+    <mxGraphModel dx="1190" dy="842" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="head" value="CU2 - Gestión de Información de Estudiantes&#10;RF2 · RF2.1 · RF2.2 · RF2.3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#173B70;strokeColor=#173B70;fontColor=#FFFFFF;fontStyle=1;fontSize=15;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="165" y="30" width="860" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="boundary" value="Sistema - GPS Guardian Escolar" style="shape=mxgraph.uml.systemBoundary;whiteSpace=wrap;html=1;fontSize=12;fontStyle=1;verticalAlign=top;align=center;fillColor=#F6F9FD;" parent="1" vertex="1">
+          <mxGeometry x="170" y="120" width="900" height="610" as="geometry" />
+        </mxCell>
+        <mxCell id="foot" value="Consultar admite propietario, ADMIN o relación compartida ACTIVE; modificar exige propietario/ADMIN. El contacto es obligatorio; ruta y vinculación son operaciones separadas. Acceso compartido: CU10." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFD;strokeColor=#C4D0E1;fontColor=#5B6472;fontStyle=2;fontSize=9;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="170" y="750" width="900" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" value="Padre o acudiente" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="55" y="302" width="60" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" value="Administrador" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="55" y="527" width="60" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" value="Dispositivo del estudiante" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="1080" y="252" width="60" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="ncrear" value="Registrar estudiante,&#10;contacto y fotografía (RF2.1)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="250.0" y="228.0" width="220" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="neditar" value="Actualizar datos y fotografía&#10;del estudiante (RF2.2)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="245.0" y="403.0" width="230" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="nconsultar" value="Consultar información&#10;del estudiante" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="250.0" y="578.0" width="220" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="nasignar" value="Asignar o cambiar&#10;ruta del estudiante" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="557.5" y="203.0" width="225" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="ncontactos" value="Gestionar contactos&#10;de emergencia" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="557.5" y="353.0" width="215" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="nqr" value="Mostrar QR y código&#10;de vinculación" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="557.5" y="518.0" width="215" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="nvincular" value="Escanear o ingresar código&#10;y vincular dispositivo" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="812.5" y="288.0" width="225" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="nvalidarQr" value="Validar código, estudiante y&#10;restricción de dispositivo" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="802.5" y="433.0" width="235" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="npermisos" value="Validar permiso según&#10;consulta o administración" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="530.0" y="658.0" width="260" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a1" target="ncrear">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a1" target="neditar">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a1" target="nconsultar">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a1" target="nqr">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a2" target="ncrear">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a2" target="neditar">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a2" target="nconsultar">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a2" target="nqr">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a3" target="nvincular">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="ncrear" target="npermisos">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="neditar" target="ncontactos">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="neditar" target="npermisos">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e15" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="nconsultar" target="npermisos">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e16" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="nvincular" target="nvalidarQr">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="route1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a1" target="nasignar">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="route2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a2" target="nasignar">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="contactCreate" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="ncrear" target="ncontactos">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="CU3" name="CU3 - Rastreo GPS y sincronización">
+    <mxGraphModel dx="1190" dy="842" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="head" value="CU3 - Rastreo en Tiempo Real de Estudiantes&#10;RF3 · RF3.1 · RF3.1.1 · RF3.1.2 · RF3.2 · RF3.3 · RF3.4 · RF3.4.1 · RF3.5 · RF3.6" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#173B70;strokeColor=#173B70;fontColor=#FFFFFF;fontStyle=1;fontSize=15;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="165" y="30" width="860" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="boundary" value="Sistema - GPS Guardian Escolar" style="shape=mxgraph.uml.systemBoundary;whiteSpace=wrap;html=1;fontSize=12;fontStyle=1;verticalAlign=top;align=center;fillColor=#F6F9FD;" parent="1" vertex="1">
+          <mxGeometry x="170" y="120" width="900" height="610" as="geometry" />
+        </mxCell>
+        <mxCell id="foot" value="La app mantiene cola offline y usa createTrackingSocket. El backend valida el vínculo activo del equipo y autoriza SUBSCRIBE al propietario/ADMIN del viaje." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFD;strokeColor=#C4D0E1;fontColor=#5B6472;fontStyle=2;fontSize=9;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="170" y="750" width="900" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" value="Padre o acudiente" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="55" y="242" width="60" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" value="Administrador" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="55" y="497" width="60" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" value="Dispositivo del estudiante" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="1080" y="257" width="60" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="nmonitor" value="Monitorear ubicación y&#10;trayecto del estudiante (RF3.1)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="232.5" y="223.0" width="225" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="ntrayecto" value="Ver trayecto recorrido y&#10;ruta asignada (RF3.4, RF3.5)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="222.5" y="413.0" width="245" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="nzonas" value="Gestionar zonas&#10;seguras (RF3.6)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="240.0" y="593.0" width="210" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="nseleccionar" value="Seleccionar estudiante&#10;(RF3.2)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="507.5" y="153.0" width="215" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="ncoord" value="Capturar, filtrar y encolar&#10;coordenadas GPS" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="782.5" y="228.0" width="235" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="nvalidar" value="Validar token y vínculo&#10;activo del dispositivo" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="787.5" y="343.0" width="225" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="npersistir" value="Sincronizar y registrar&#10;coordenadas del trayecto" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="535.0" y="333.0" width="230" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="nevaluar" value="Evaluar inactividad, zona&#10;segura y desvío de ruta" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="537.5" y="508.0" width="225" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="npublicar" value="Publicar coordenada por&#10;WebSocket (RF3.3)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="530.0" y="683.0" width="240" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a1" target="nmonitor">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a1" target="ntrayecto">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a1" target="nzonas">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a2" target="nmonitor">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a2" target="ntrayecto">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a2" target="nzonas">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a3" target="ncoord">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="nmonitor" target="nseleccionar">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="ncoord" target="nvalidar">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="ncoord" target="npersistir">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="npersistir" target="nevaluar">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="npersistir" target="npublicar">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="ntrayecto" target="nseleccionar">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="CU4" name="CU4 - Notificaciones multicanal">
+    <mxGraphModel dx="1190" dy="842" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="head" value="CU4 - Notificaciones y Alertas en Tiempo Real&#10;RF4 · RF4.1 · RF4.1.1 · RF4.2 · RF4.3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#173B70;strokeColor=#173B70;fontColor=#FFFFFF;fontStyle=1;fontSize=15;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="165" y="30" width="860" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="boundary" value="Sistema - GPS Guardian Escolar" style="shape=mxgraph.uml.systemBoundary;whiteSpace=wrap;html=1;fontSize=12;fontStyle=1;verticalAlign=top;align=center;fillColor=#F6F9FD;" parent="1" vertex="1">
+          <mxGeometry x="170" y="120" width="900" height="610" as="geometry" />
+        </mxCell>
+        <mxCell id="foot" value="Se crea notificación y recibo antes de evaluar la entrega. Las preferencias controlan push/correo; read-all modifica solo los recibos propios. SMS no está operativo." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFD;strokeColor=#C4D0E1;fontColor=#5B6472;fontStyle=2;fontSize=9;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="170" y="750" width="900" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" value="Padre o acudiente" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="55" y="242" width="60" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" value="Administrador" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="55" y="512" width="60" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" value="Expo Push / correo" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="1080" y="312" width="60" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="npref" value="Configurar preferencias&#10;de notificación (RF4.2)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="227.5" y="203.0" width="235" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="nhistorial" value="Consultar historial de&#10;notificaciones (RF4.3)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="230.0" y="558.0" width="230" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="nrecibir" value="Recibir alerta&#10;en tiempo real" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="240.0" y="383.0" width="210" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="nevento" value="Detectar evento de&#10;rastreo implementado (RF4.1)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="522.5" y="223.0" width="225" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="ngenerar" value="Generar notificación&#10;con contexto del evento" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="520.0" y="363.0" width="230" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="ncanal" value="Evaluar preferencias de&#10;evento y canal" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="515.0" y="508.0" width="240" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="nenviar" value="Entregar alerta por&#10;push y/o correo" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="795.0" y="363.0" width="210" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="nrecibo" value="Marcar una o todas las&#10;notificaciones como leídas" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="785.0" y="533.0" width="230" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="ninactividad" value="Detectar inactividad&#10;prolongada (RF4.1.1)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="775.0" y="213.0" width="250" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="nbateria" value="Detectar entrada o salida&#10;de una zona segura" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="785.0" y="668.0" width="230" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a1" target="npref">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a1" target="nhistorial">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a1" target="nrecibir">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a2" target="npref">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a2" target="nhistorial">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a2" target="nrecibir">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a3" target="nenviar">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="nevento" target="ngenerar">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="ngenerar" target="ncanal">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" value="«extend»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="ninactividad" target="nevento">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" value="«extend»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="nbateria" target="nevento">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="deliveryOptional" value="«extend»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="nenviar" target="ngenerar">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="readOwn1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a1" target="nrecibo">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="readOwn2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a2" target="nrecibo">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="CU5" name="CU5 - Historial de trayectos">
+    <mxGraphModel dx="1190" dy="842" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="head" value="CU5 - Visualización de Historial de Trayectos&#10;RF5 · RF5.1 · RF5.2 · RF5.3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#173B70;strokeColor=#173B70;fontColor=#FFFFFF;fontStyle=1;fontSize=15;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="165" y="30" width="860" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="boundary" value="Sistema - GPS Guardian Escolar" style="shape=mxgraph.uml.systemBoundary;whiteSpace=wrap;html=1;fontSize=12;fontStyle=1;verticalAlign=top;align=center;fillColor=#F6F9FD;" parent="1" vertex="1">
+          <mxGeometry x="170" y="120" width="900" height="610" as="geometry" />
+        </mxCell>
+        <mxCell id="foot" value="El historial combina /api/trips con eventos de /api/notifications y filtros locales. REST de viajes admite propietario/ADMIN; compartir la ficha no habilita automáticamente esos viajes." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFD;strokeColor=#C4D0E1;fontColor=#5B6472;fontStyle=2;fontSize=9;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="170" y="750" width="900" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" value="Padre o acudiente" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="55" y="297" width="60" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" value="Administrador" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="55" y="527" width="60" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="nconsultar" value="Consultar historial de&#10;trayectos (RF5.1)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="252.5" y="313.0" width="225" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="nfiltros" value="Filtrar localmente por&#10;estudiante, fecha y estado (RF5.2)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="515.0" y="193.0" width="230" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="nvalidar" value="Validar propiedad o&#10;rol ADMIN" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="790.0" y="313.0" width="220" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="nresultados" value="Mostrar resultados&#10;ordenados" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="532.5" y="393.0" width="195" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="ndetalle" value="Ver ruta, puntos, horarios&#10;y estado del trayecto (RF5.3)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="500.0" y="563.0" width="260" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="nsinDatos" value="Informar ausencia&#10;de resultados" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="805.0" y="513.0" width="190" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a1" target="nconsultar">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a1" target="ndetalle">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a2" target="nconsultar">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a2" target="ndetalle">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="nconsultar" target="nvalidar">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="nconsultar" target="nresultados">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="«extend»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="nfiltros" target="nconsultar">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="«extend»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="ndetalle" target="nresultados">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" value="«extend»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="nsinDatos" target="nresultados">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="CU6" name="CU6 - Compatibilidad multiplataforma">
+    <mxGraphModel dx="1190" dy="842" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="head" value="CU6 - Compatibilidad Multiplataforma&#10;RF6 · RF6.1 · RF6.2 · RF6.3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#173B70;strokeColor=#173B70;fontColor=#FFFFFF;fontStyle=1;fontSize=15;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="165" y="30" width="860" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="boundary" value="Sistema - GPS Guardian Escolar" style="shape=mxgraph.uml.systemBoundary;whiteSpace=wrap;html=1;fontSize=12;fontStyle=1;verticalAlign=top;align=center;fillColor=#F6F9FD;" parent="1" vertex="1">
+          <mxGeometry x="170" y="120" width="900" height="610" as="geometry" />
+        </mxCell>
+        <mxCell id="foot" value="Expo adapta plataforma y permisos. LanguageContext guarda el idioma en AsyncStorage; la traducción de textos se hace en frontend, sin consultar PostgreSQL." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFD;strokeColor=#C4D0E1;fontColor=#5B6472;fontStyle=2;fontSize=9;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="170" y="750" width="900" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" value="Padre o acudiente" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="55" y="282" width="60" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" value="Administrador" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="55" y="507" width="60" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="nacceder" value="Acceder desde Android,&#10;iOS o navegador web" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="240.0" y="313.0" width="220" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="nentorno" value="Detectar plataforma, tamaño&#10;y capacidades (RF6.1)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="525.0" y="203.0" width="250" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="nadaptar" value="Adaptar interfaz a&#10;tamaño y orientación (RF6.2)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="527.5" y="363.0" width="245" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="naccesible" value="Presentar interfaz accesible&#10;y textos según idioma" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="545.0" y="533.0" width="210" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="naviso" value="Informar permiso o capacidad&#10;no disponible" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="825.0" y="483.0" width="210" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a1" target="nacceder">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a2" target="nacceder">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="nacceder" target="nentorno">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="nacceder" target="nadaptar">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="nacceder" target="naccesible">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="«extend»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="naviso" target="nentorno">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="CU7" name="CU7 - Consulta administrativa">
+    <mxGraphModel dx="1190" dy="842" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="head" value="CU7 - Administración del Sistema&#10;RF7 · RF7.1 · RF7.1.1 · RF7.2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#173B70;strokeColor=#173B70;fontColor=#FFFFFF;fontStyle=1;fontSize=15;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="165" y="30" width="860" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="boundary" value="Sistema - GPS Guardian Escolar" style="shape=mxgraph.uml.systemBoundary;whiteSpace=wrap;html=1;fontSize=12;fontStyle=1;verticalAlign=top;align=center;fillColor=#F6F9FD;" parent="1" vertex="1">
+          <mxGeometry x="170" y="120" width="900" height="610" as="geometry" />
+        </mxCell>
+        <mxCell id="foot" value="El módulo administrativo actual es de solo consulta: dashboard, alertas, auditoría y errores. No incluye gestión de usuarios, incidentes, respaldos ni instalación de actualizaciones." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFD;strokeColor=#C4D0E1;fontColor=#5B6472;fontStyle=2;fontSize=9;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="170" y="750" width="900" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" value="Administrador" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="55" y="327" width="60" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="npanel" value="Acceder al panel de&#10;consulta administrativa (RF7.1)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="222.5" y="253.0" width="215" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="nmetricas" value="Consultar totales y&#10;trayectos activos" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="487.5" y="163.0" width="225" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="nusuarios" value="Consultar alertas&#10;recientes" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="497.5" y="303.0" width="205" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="nsoporte" value="Consultar auditoría&#10;reciente" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="470.0" y="463.0" width="260" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="nactualizar" value="Consultar errores&#10;recientes" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="492.5" y="613.0" width="215" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="nrespaldo" value="Ver detalle técnico&#10;del error" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="802.5" y="613.0" width="195" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="nauditoria" value="Leer registros operativos&#10;sin modificarlos" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="797.5" y="338.0" width="205" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="nautorizar" value="Validar rol ADMIN" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="802.5" y="213.0" width="195" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a1" target="npanel">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a1" target="nusuarios">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a1" target="nsoporte">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a1" target="nactualizar">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="npanel" target="nmetricas">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="npanel" target="nautorizar">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="nusuarios" target="nauditoria">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="nsoporte" target="nauditoria">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="nactualizar" target="nrespaldo">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="nactualizar" target="nauditoria">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="CU8" name="CU8 - Seguridad y autorización">
+    <mxGraphModel dx="1190" dy="842" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="head" value="CU8 - Seguridad y Autenticación de Usuario&#10;RF8 · RF8.1 · RF8.2 · RF8.3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#173B70;strokeColor=#173B70;fontColor=#FFFFFF;fontStyle=1;fontSize=15;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="165" y="30" width="860" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="boundary" value="Sistema - GPS Guardian Escolar" style="shape=mxgraph.uml.systemBoundary;whiteSpace=wrap;html=1;fontSize=12;fontStyle=1;verticalAlign=top;align=center;fillColor=#F6F9FD;" parent="1" vertex="1">
+          <mxGeometry x="170" y="120" width="900" height="610" as="geometry" />
+        </mxCell>
+        <mxCell id="foot" value="CONNECT valida JWT y SUBSCRIBE al viaje verifica propietario/ADMIN. Los permisos de consulta y administración del estudiante son distintos." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFD;strokeColor=#C4D0E1;fontColor=#5B6472;fontStyle=2;fontSize=9;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="170" y="750" width="900" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" value="Padre o acudiente" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="55" y="247" width="60" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" value="Administrador" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="55" y="542" width="60" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="nsesion" value="Autenticarse y verificar&#10;correo o segundo factor" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="217.5" y="228.0" width="235" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="nrecursos" value="Acceder a recursos&#10;autorizados" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="227.5" y="433.0" width="215" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="nroles" value="Aplicar roles y permisos&#10;configurados" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="232.5" y="613.0" width="205" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="ntls" value="Proteger comunicación&#10;mediante HTTPS/TLS (RF8.1)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="520.0" y="203.0" width="250" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="njwt" value="Emitir y validar&#10;token JWT" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="542.5" y="323.0" width="205" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="nrbac" value="Autorizar REST y suscripción&#10;al viaje por recurso" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="517.5" y="458.0" width="255" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="nbcrypt" value="Proteger contraseñas&#10;con BCrypt (RF8.2)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="535.0" y="593.0" width="220" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="naudit" value="Registrar solicitudes y&#10;operaciones relevantes" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="805.0" y="463.0" width="230" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a1" target="nsesion">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a1" target="nrecursos">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a2" target="nsesion">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a2" target="nrecursos">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a2" target="nroles">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="nsesion" target="ntls">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="nsesion" target="njwt">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="nsesion" target="nbcrypt">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="nrecursos" target="ntls">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="nrecursos" target="nrbac">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="nroles" target="nrbac">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="nroles" target="naudit">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="CU9" name="CU9 - API, WebSocket y Google Maps">
+    <mxGraphModel dx="1190" dy="842" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="head" value="CU9 - API de Comunicación&#10;RF9 · RF9.1 · RF9.2 · RF9.3 · RF9.4 · RF9.5 · RF9.6" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#173B70;strokeColor=#173B70;fontColor=#FFFFFF;fontStyle=1;fontSize=15;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="165" y="30" width="860" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="boundary" value="Sistema - GPS Guardian Escolar" style="shape=mxgraph.uml.systemBoundary;whiteSpace=wrap;html=1;fontSize=12;fontStyle=1;verticalAlign=top;align=center;fillColor=#F6F9FD;" parent="1" vertex="1">
+          <mxGeometry x="170" y="120" width="900" height="610" as="geometry" />
+        </mxCell>
+        <mxCell id="foot" value="API REST y WebSocket con autorización por viaje; Maps usa proxy backend y Places API New. En web, Nginx de Render deriva /api y /ws; PostgreSQL no se expone al frontend." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFD;strokeColor=#C4D0E1;fontColor=#5B6472;fontStyle=2;fontSize=9;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="170" y="750" width="900" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" value="Padre o acudiente" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="55" y="207" width="60" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" value="Administrador" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="55" y="527" width="60" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" value="Dispositivo del estudiante" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="1080" y="287" width="60" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="napi" value="Consumir operaciones&#10;de la API REST" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="235.0" y="203.0" width="220" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="nhistorial" value="Consultar historial&#10;mediante API (RF9.5)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="235.0" y="413.0" width="220" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="nsocket" value="Recibir eventos en&#10;tiempo real por WebSocket" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="222.5" y="598.0" width="245" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="ngps" value="Enviar coordenadas GPS&#10;a la API (RF9.3)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="787.5" y="258.0" width="225" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="ndatos" value="Gestionar estudiantes, rutas,&#10;zonas y trayectos por API" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="522.5" y="203.0" width="245" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="nalertas" value="Recibir coordenadas del&#10;trayecto por WebSocket" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="530.0" y="423.0" width="230" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="nauth" value="Autenticar REST y conexión&#10;WebSocket con JWT (RF9.1)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="527.5" y="583.0" width="235" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="nsegura" value="Proteger comunicación&#10;HTTPS/TLS (RF9.6)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="785.0" y="553.0" width="230" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a1" target="napi">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a1" target="nhistorial">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a1" target="nsocket">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a2" target="napi">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a2" target="nhistorial">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a2" target="nsocket">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a3" target="ngps">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="napi" target="ndatos">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="napi" target="nauth">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="nhistorial" target="nauth">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="nsocket" target="nalertas">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="nsocket" target="nauth">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="ngps" target="nauth">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="nauth" target="nsegura">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nmaps" value="Geocodificar direcciones y&#10;calcular rutas con Google Maps" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="790" y="408" width="225" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="a4" value="Google Maps Platform" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="1080" y="505" width="60" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="e15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a4" target="nmaps">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e16" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="napi" target="nmaps">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="CU10" name="CU10 - Compartir y revocar acceso">
+    <mxGraphModel dx="1190" dy="842" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="head" value="CU10 - Gestión del acceso compartido&#10;Propietario / administrador y acudiente autorizado" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#173B70;strokeColor=#173B70;fontColor=#FFFFFF;fontStyle=1;fontSize=15;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="165" y="30" width="860" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="boundary" value="Sistema - GPS Guardian Escolar" style="shape=mxgraph.uml.systemBoundary;whiteSpace=wrap;html=1;fontSize=12;fontStyle=1;verticalAlign=top;align=center;fillColor=#F6F9FD;" parent="1" vertex="1">
+          <mxGeometry x="170" y="120" width="900" height="610" as="geometry" />
+        </mxCell>
+        <mxCell id="foot" value="POST activa la relación; DELETE la marca REVOKED. El propietario no se revoca. emailSent informa el aviso, no condiciona la activación del acceso." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFD;strokeColor=#C4D0E1;fontColor=#5B6472;fontStyle=2;fontSize=9;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="170" y="750" width="900" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" value="Propietario" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="55" y="297" width="60" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" value="Administrador" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="55" y="527" width="60" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="nconsultar" value="Compartir acceso con&#10;un usuario registrado" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="252.5" y="313.0" width="225" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="nfiltros" value="Consultar acudientes&#10;con acceso activo" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="515.0" y="193.0" width="230" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="nvalidar" value="Validar permiso de&#10;administración" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="790.0" y="313.0" width="220" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="nresultados" value="Actualizar estado de&#10;la relación de acceso" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="532.5" y="393.0" width="195" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="ndetalle" value="Revocar acceso&#10;compartido" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="500.0" y="563.0" width="260" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="nsinDatos" value="Notificar al usuario&#10;por correo" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="805.0" y="513.0" width="190" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="new0" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a1" target="nconsultar">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="new1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a2" target="nconsultar">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="new2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a1" target="ndetalle">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="new3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a2" target="ndetalle">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="new4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a1" target="nfiltros">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="new5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=none;html=1;" parent="1" edge="1" source="a2" target="nfiltros">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="new6" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="nconsultar" target="nvalidar">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="new7" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="ndetalle" target="nvalidar">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="new8" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="nconsultar" target="nresultados">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="new9" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="ndetalle" target="nresultados">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="new10" value="«extend»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;dashed=1;html=1;labelBackgroundColor=#FFFFFF;fontSize=9;" parent="1" edge="1" source="nsinDatos" target="nconsultar">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

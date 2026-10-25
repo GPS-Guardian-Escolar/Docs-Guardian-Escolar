@@ -1,0 +1,16 @@
+# Índice de diagramas
+
+Las fuentes editables de Draw.io y sus exportaciones PDF se organizan por tipo y versión. Cada fila enlaza los dos formatos disponibles para facilitar la consulta y la edición.
+
+| Diagrama | Fuente 1.0 | PDF 1.0 | Fuente 2.0 | PDF 2.0 |
+|---|---|---|---|---|
+| Actividades | [DRAWIO](./diagrams/source/version-1.0/diagramas-de-actividades.drawio) | [PDF](./diagrams/exports/version-1.0/diagramas-de-actividades.pdf) | [DRAWIO](./diagrams/source/version-2.0/diagramas-de-actividades.drawio) | [PDF](./diagrams/exports/version-2.0/diagramas-de-actividades.pdf) |
+| Casos de uso | [DRAWIO](./diagrams/source/version-1.0/diagrama-casos-de-uso.drawio) | [PDF](./diagrams/exports/version-1.0/diagrama-casos-de-uso.pdf) | [DRAWIO](./diagrams/source/version-2.0/diagrama-casos-de-uso.drawio) | [PDF](./diagrams/exports/version-2.0/diagrama-casos-de-uso.pdf) |
+| Clases | [DRAWIO](./diagrams/source/version-1.0/diagrama-de-clases.drawio) | [PDF](./diagrams/exports/version-1.0/diagrama-de-clases.pdf) | [DRAWIO](./diagrams/source/version-2.0/diagrama-de-clases.drawio) | [PDF](./diagrams/exports/version-2.0/diagrama-de-clases.pdf) |
+| Componentes | [DRAWIO](./diagrams/source/version-1.0/diagrama-componentes.drawio) | [PDF](./diagrams/exports/version-1.0/diagrama-componentes.pdf) | [DRAWIO](./diagrams/source/version-2.0/diagrama-componentes.drawio) | [PDF](./diagrams/exports/version-2.0/diagrama-componentes.pdf) |
+| Despliegue | [DRAWIO](./diagrams/source/version-1.0/diagrama-despliegue.drawio) | [PDF](./diagrams/exports/version-1.0/diagrama-despliegue.pdf) | [DRAWIO](./diagrams/source/version-2.0/diagrama-despliegue.drawio) | [PDF](./diagrams/exports/version-2.0/diagrama-despliegue.pdf) |
+| Dominio | [DRAWIO](./diagrams/source/version-1.0/diagrama-dominio.drawio) | [PDF](./diagrams/exports/version-1.0/diagrama-dominio.pdf) | [DRAWIO](./diagrams/source/version-2.0/diagrama-dominio.drawio) | [PDF](./diagrams/exports/version-2.0/diagrama-dominio.pdf) |
+| Entidad relación | [DRAWIO](./diagrams/source/version-1.0/modelo-entidad-relacion.drawio) | [PDF](./diagrams/exports/version-1.0/modelo-entidad-relacion.pdf) | [DRAWIO](./diagrams/source/version-2.0/modelo-entidad-relacion.drawio) | [PDF](./diagrams/exports/version-2.0/modelo-entidad-relacion.pdf) |
+| Relacional | [DRAWIO](./diagrams/source/version-1.0/modelo-relacional.drawio) | [PDF](./diagrams/exports/version-1.0/modelo-relacional.pdf) | [DRAWIO](./diagrams/source/version-2.0/modelo-relacional.drawio) | [PDF](./diagrams/exports/version-2.0/modelo-relacional.pdf) |
+| Secuencias | [DRAWIO](./diagrams/source/version-1.0/diagramas-secuenciales.drawio) | [PDF](./diagrams/exports/version-1.0/diagramas-secuenciales.pdf) | [DRAWIO](./diagrams/source/version-2.0/diagramas-secuenciales.drawio) | [PDF](./diagrams/exports/version-2.0/diagramas-secuenciales.pdf) |
+| Transición de estados | [DRAWIO](./diagrams/source/version-1.0/diagrama-transicion-de-estados.drawio) | [PDF](./diagrams/exports/version-1.0/diagrama-transicion-de-estados.pdf) | [DRAWIO](./diagrams/source/version-2.0/diagrama-transicion-de-estados.drawio) | [PDF](./diagrams/exports/version-2.0/diagrama-transicion-de-estados.pdf) |
