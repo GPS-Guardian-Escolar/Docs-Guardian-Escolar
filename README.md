@@ -20,3 +20,5 @@ Este repositorio reúne la documentación técnica y académica del proyecto, or
 Los documentos conservan el formato en que fueron entregados. Las carpetas `version-1.0`, `version-2.0` y `version-2.5.4` mantienen separados los lotes recibidos y sus revisiones; consulta la fecha y el estado indicados dentro de cada documento antes de usarlo como referencia vigente.
 
 La documentacion vigente de las HU se mantiene en `00-governance/hus`, `03-product/version-2.5.4`, `04-requirements/version-2.5.4`, `05-architecture/decisions/records`, `06-data/version-2.5.4`, `07-api/contracts/openapi`, `10-devops/version-2.5.4` y `11-quality/version-2.5.4`. Los repositorios de codigo conservan solo la documentacion minima necesaria para poder construir y ejecutar cada componente.
+
+La documentacion tecnica recuperada del Frontend esta en [`09-modules/version-2.5.4/frontend-technical-documentation/`](./09-modules/version-2.5.4/frontend-technical-documentation/). Su origen historico es el commit `27dc49a` de la rama `docs/frontend-technical-documentation-develop` del Frontend; la copia vigente se mantiene en este repositorio Docs.
