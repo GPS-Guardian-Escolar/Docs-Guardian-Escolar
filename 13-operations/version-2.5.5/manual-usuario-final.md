@@ -1,15 +1,6 @@
 # Manual de usuario final — GPS Guardian Escolar
 
-**Versión:** 2026-10-28<br>
-**Estado:** Actualizado desde código y evidencia disponible al 28 de octubre de 2026<br>
-**Audiencia:** acudientes, usuarios del panel y operadores del dispositivo del estudiante.
-
-
-**Versión documental:** 2.5.5<br>
-**Corte de código:** 2026-10-28<br>
-**Snapshots:** Backend `345a8b3`; Frontend `d0648c1`; DB `e6b84c5`; Infra `d06a61c`.<br>
-**Evidencia:** revisión estática; ejecución de CI y validación en dispositivos pendientes.
----
+**Versión:** 2026-10-28
 
 ## 1. ¿Qué es GPS Guardian Escolar?
 
@@ -99,16 +90,16 @@ Si su cuenta tiene permisos de administración, accederá a un panel con resumen
 
 ## 11. Preguntas frecuentes
 
-**No recibo el correo de verificación**<br>
+**No recibo el correo de verificación**
 Compruebe spam. Si el entorno de prueba tiene el correo desactivado, contacte al administrador técnico.
 
-**El mapa no carga**<br>
+**El mapa no carga**
 Verifique conexión a Internet y que el servicio de mapas esté configurado en el servidor.
 
-**El QR no funciona**<br>
+**El QR no funciona**
 Permita el acceso a la cámara o use el ingreso manual del código.
 
-**La ubicación no se actualiza**<br>
+**La ubicación no se actualiza**
 Revise permisos de ubicación, modo de ahorro de batería y que el trayecto esté activo.
 
 ## 12. Privacidad y buenas prácticas
@@ -121,7 +112,5 @@ Revise permisos de ubicación, modo de ahorro de batería y que el trayecto est�
 ## 13. Soporte
 
 Para fallas técnicas (servidor caído, error de instalación, cuentas institucionales), contacte al equipo que administra el despliegue. Indique fecha, hora, pantalla y mensaje de error exacto.
-
-## Actualización técnica — 28 de octubre de 2026
 
 El flujo QR cuenta con ajustes de interfaz y código de enlace controlado. La pantalla inicial puede ofrecer descarga Android cuando la organización configure un enlace válido. Un dispositivo nuevo puede requerir confirmación y los intentos repetidos pueden limitar temporalmente el inicio. Proteger QR, ubicación y datos de menores; validar el flujo en dispositivo real.

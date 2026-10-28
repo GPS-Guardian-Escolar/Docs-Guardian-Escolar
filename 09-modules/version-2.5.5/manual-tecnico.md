@@ -1,15 +1,8 @@
 # Manual técnico — GPS Guardian Escolar
 
-**Versión:** 2026-10-28<br>
-**Estado:** Actualizado desde código y evidencia disponible al 28 de octubre de 2026<br>
+**Versión:** 2026-10-28
+**Estado:** Actualizado desde código y evidencia disponible al 28 de octubre de 2026
 **Audiencia:** desarrolladores, integradores y personal de soporte técnico.
-
-
-**Versión documental:** 2.5.5<br>
-**Corte de código:** 2026-10-28<br>
-**Snapshots:** Backend `345a8b3`; Frontend `d0648c1`; DB `e6b84c5`; Infra `d06a61c`.<br>
-**Evidencia:** revisión estática; ejecución de CI y validación en dispositivos pendientes.
----
 
 ## 1. Descripción del sistema
 
@@ -17,37 +10,37 @@ GPS Guardian Escolar es una plataforma de seguimiento del trayecto escolar. El b
 
 ## 2. Stack técnico vigente
 
-| Capa | Tecnología |
-|---|---|
-| Backend | Spring Boot 3.5.16, Java 17, Spring Security, JPA, WebSocket STOMP, Mail, Actuator, SpringDoc 2.8.16 |
-| Seguridad API | JWT (jjwt 0.12.6) |
-| Resiliencia Maps | Resilience4j 2.3.0, Caffeine |
-| Frontend | Expo 57, React 19.2.3, React Native 0.86.3, expo-router, axios, stompjs, react-native-maps |
-| BD | PostgreSQL 15, Liquibase |
-| Infra | Docker Compose, Nginx (frontend web) |
+| Capa             | Tecnología                                                                                          |
+| ---------------- | ---------------------------------------------------------------------------------------------------- |
+| Backend          | Spring Boot 3.5.16, Java 17, Spring Security, JPA, WebSocket STOMP, Mail, Actuator, SpringDoc 2.8.16 |
+| Seguridad API    | JWT (jjwt 0.12.6)                                                                                    |
+| Resiliencia Maps | Resilience4j 2.3.0, Caffeine                                                                         |
+| Frontend         | Expo 57, React 19.2.3, React Native 0.86.3, expo-router, axios, stompjs, react-native-maps           |
+| BD               | PostgreSQL 15, Liquibase                                                                             |
+| Infra            | Docker Compose, Nginx (frontend web)                                                                 |
 
 ## 3. Estructura de repositorios
 
-| Repositorio | Contenido |
-|---|---|
-| Backend-Guardian-Escolar | API, Dockerfile, docker-compose standalone, `.env.example` |
-| Fronted-GuardianEscolar- | App Expo, Dockerfile, nginx.conf, services, app routes |
-| DB-Structure-Guardian-Escolar | 01_ddl, 02_dml, 03_dcl, changelog Liquibase |
-| Docker-Infra-Guardian-Escolar | compose multi-servicio |
+| Repositorio                   | Contenido                                                    |
+| ----------------------------- | ------------------------------------------------------------ |
+| Backend-Guardian-Escolar      | API, Dockerfile, docker-compose standalone, `.env.example` |
+| Fronted-GuardianEscolar-      | App Expo, Dockerfile, nginx.conf, services, app routes       |
+| DB-Structure-Guardian-Escolar | 01_ddl, 02_dml, 03_dcl, changelog Liquibase                  |
+| Docker-Infra-Guardian-Escolar | compose multi-servicio                                       |
 
 ## 4. Módulos backend
 
 Paquete base: `com.guardianescolar.api`
 
-- `modules.auth` — cuenta, JWT, email, 2FA<br>
-- `modules.students` — estudiantes, guardianes, contactos, link-device<br>
-- `modules.routes` — rutas y paradas<br>
-- `modules.trips` — trayectos y coordenadas<br>
-- `modules.zones` — zonas seguras<br>
-- `modules.maps` — proxy Google Maps<br>
-- `modules.notifications` — inbox, settings, dispositivos<br>
-- `modules.admin` — dashboard, alertas, audit, errors<br>
-- `shared.security` / `shared.config` — JWT, WebSocket, SecurityConfig<br>
+- `modules.auth` — cuenta, JWT, email, 2FA
+- `modules.students` — estudiantes, guardianes, contactos, link-device
+- `modules.routes` — rutas y paradas
+- `modules.trips` — trayectos y coordenadas
+- `modules.zones` — zonas seguras
+- `modules.maps` — proxy Google Maps
+- `modules.notifications` — inbox, settings, dispositivos
+- `modules.admin` — dashboard, alertas, audit, errors
+- `shared.security` / `shared.config` — JWT, WebSocket, SecurityConfig
 
 ## 5. Inventario de endpoints
 
@@ -101,16 +94,16 @@ Esquema gobernado por Liquibase; Hibernate `ddl-auto: validate`.
 
 ## 7. Configuración crítica
 
-| Variable | Uso |
-|---|---|
-| DB_URL / DB_USERNAME / DB_PASSWORD | Conexión JDBC |
-| JWT_SECRET / JWT_EXPIRATION_MINUTES | Emisión de tokens |
-| CORS_ALLOWED_ORIGINS | Orígenes permitidos |
-| GOOGLE_MAPS_API_KEY | Solo servidor (proxy maps) |
-| APP_MAIL_ENABLED / MAIL_* | Correo |
-| EXPO_PUSH_ENABLED | Push |
-| SMS_ENABLED / SMS_* | SMS |
-| GPS_* umbral | Desvío de ruta (verificar nombre exacto en YAML) |
+| Variable                            | Uso                                               |
+| ----------------------------------- | ------------------------------------------------- |
+| DB_URL / DB_USERNAME / DB_PASSWORD  | Conexión JDBC                                    |
+| JWT_SECRET / JWT_EXPIRATION_MINUTES | Emisión de tokens                                |
+| CORS_ALLOWED_ORIGINS                | Orígenes permitidos                              |
+| GOOGLE_MAPS_API_KEY                 | Solo servidor (proxy maps)                        |
+| APP_MAIL_ENABLED / MAIL_*           | Correo                                            |
+| EXPO_PUSH_ENABLED                   | Push                                              |
+| SMS_ENABLED / SMS_*                 | SMS                                               |
+| GPS_* umbral                        | Desvío de ruta (verificar nombre exacto en YAML) |
 
 ## 8. WebSocket
 
@@ -142,7 +135,5 @@ Actuator expone: health, info, metrics, prometheus (según `management.endpoints
 - Diseño: `04_Diseno/04_Diseno_Software.md`
 - Implementación: `06_Implementacion/06_Procedimiento_Implementacion.md`
 - Pruebas: `05_Pruebas/05_Documentacion_Pruebas.md`
-
-## Actualización técnica — 28 de octubre de 2026
 
 Configurar identificador de dispositivo y revisar respuestas HTTP 429. Los tokens persistidos y códigos de enlace usan protección hash. Separar clave PostgreSQL de `APP_DB_PASSWORD`; el bootstrap de administrador solo se activa con contexto explícito. La función de depuración de coordenadas es restringida y manual; definir política antes de programarla.

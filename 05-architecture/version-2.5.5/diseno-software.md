@@ -1,16 +1,9 @@
 # Documentación de diseño del software
 
-**Proyecto:** GPS Guardian Escolar<br>
-**Versión:** 2026-10-28 (actualizada desde código)<br>
-**Estado:** Revisado y actualizado<br>
+**Proyecto:** GPS Guardian Escolar
+**Versión:** 2026-10-28 (actualizada desde código)
+**Estado:** Revisado y actualizado
 **Contenido:** interfaces gráficas, modelo arquitectónico, patrones de diseño y modelo de datos.
-
-
-**Versión documental:** 2.5.5<br>
-**Corte de código:** 2026-10-28<br>
-**Snapshots:** Backend `345a8b3`; Frontend `d0648c1`; DB `e6b84c5`; Infra `d06a61c`.<br>
-**Evidencia:** revisión estática; ejecución de CI y validación en dispositivos pendientes.
----
 
 ## 1. Modelo arquitectónico
 
@@ -26,12 +19,12 @@ Arquitectura en capas cliente-servidor con API REST y mensajería STOMP:
 
 ### 1.2 Despliegue lógico
 
-| Contenedor / proceso | Puerto | Responsabilidad |
-|---|---|---|
-| frontend (Nginx + static Expo web) | 8081 | UI web y reverse proxy |
-| backend | 8080 | API y WebSocket |
-| database | 5432 | Datos |
-| liquibase | — (one-shot) | Migraciones |
+| Contenedor / proceso               | Puerto        | Responsabilidad        |
+| ---------------------------------- | ------------- | ---------------------- |
+| frontend (Nginx + static Expo web) | 8081          | UI web y reverse proxy |
+| backend                            | 8080          | API y WebSocket        |
+| database                           | 5432          | Datos                  |
+| liquibase                          | — (one-shot) | Migraciones            |
 
 ### 1.3 Comunicación
 
@@ -41,18 +34,18 @@ Arquitectura en capas cliente-servidor con API REST y mensajería STOMP:
 
 ## 2. Patrones de diseño aplicados
 
-| Patrón | Dónde se observa |
-|---|---|
-| Modularización por dominio | Paquetes `modules/auth`, `students`, `routes`, `trips`, `zones`, `maps`, `notifications`, `admin` |
-| DTO | Clases de transferencia en controladores/servicios (p. ej. AdminDtos) |
-| Filter / Interceptor | `JwtAuthenticationFilter`; `WebSocketAuthChannelInterceptor` |
-| Proxy | `MapsController` / `GoogleMapsClient` frente a Google Maps Platform |
-| Cache | Caffeine en módulo maps (TTL geocoding/directions) |
-| Circuit breaker / Retry / Rate limit | Resilience4j y rate limiter en maps |
-| Repository | Spring Data JPA |
-| Dependency injection | Constructores / Lombok `@RequiredArgsConstructor` |
-| Front controller (cliente) | expo-router (`app/(auth)`, `app/(tabs)`) |
-| Context / Provider (cliente) | AuthContext, ThemeContext, LanguageContext, UserRoleContext |
+| Patrón                              | Dónde se observa                                                                                                 |
+| ------------------------------------ | ----------------------------------------------------------------------------------------------------------------- |
+| Modularización por dominio          | Paquetes `modules/auth`, `students`, `routes`, `trips`, `zones`, `maps`, `notifications`, `admin` |
+| DTO                                  | Clases de transferencia en controladores/servicios (p. ej. AdminDtos)                                             |
+| Filter / Interceptor                 | `JwtAuthenticationFilter`; `WebSocketAuthChannelInterceptor`                                                  |
+| Proxy                                | `MapsController` / `GoogleMapsClient` frente a Google Maps Platform                                           |
+| Cache                                | Caffeine en módulo maps (TTL geocoding/directions)                                                               |
+| Circuit breaker / Retry / Rate limit | Resilience4j y rate limiter en maps                                                                               |
+| Repository                           | Spring Data JPA                                                                                                   |
+| Dependency injection                 | Constructores / Lombok `@RequiredArgsConstructor`                                                               |
+| Front controller (cliente)           | expo-router (`app/(auth)`, `app/(tabs)`)                                                                      |
+| Context / Provider (cliente)         | AuthContext, ThemeContext, LanguageContext, UserRoleContext                                                       |
 
 ## 3. Interfaces gráficas (cliente)
 
@@ -73,15 +66,15 @@ app/
 
 ### 3.2 Capacidades de UI por área
 
-| Área | Elementos de interfaz presentes en código |
-|---|---|
-| Autenticación | Formularios de login/registro, verificación, recuperación, 2FA |
-| Estudiantes | Listado/alta/edición, foto opcional, contactos, guardianes |
-| Vinculación | Escáner QR (expo-camera) e ingreso manual |
+| Área            | Elementos de interfaz presentes en código                                  |
+| ---------------- | --------------------------------------------------------------------------- |
+| Autenticación   | Formularios de login/registro, verificación, recuperación, 2FA            |
+| Estudiantes      | Listado/alta/edición, foto opcional, contactos, guardianes                 |
+| Vinculación     | Escáner QR (expo-camera) e ingreso manual                                  |
 | Mapas / tracking | react-native-maps; círculos de zonas con radio en metros; ruta y posición |
-| Notificaciones | Lista y preferencias |
-| Perfil | Datos de cuenta y seguridad |
-| Admin | Vistas de panel (consumo de `/api/admin`) |
+| Notificaciones   | Lista y preferencias                                                        |
+| Perfil           | Datos de cuenta y seguridad                                                 |
+| Admin            | Vistas de panel (consumo de `/api/admin`)                                 |
 
 ### 3.3 Componentes reutilizables
 
@@ -130,14 +123,14 @@ Ver inventario en sección 10 del documento técnico de código o el manual téc
 
 ### 5.1 Dominios
 
-1. **Usuarios y estudiantes:** users, students, student_guardians, emergency_contacts<br>
-2. **Seguridad:** roles, permissions, user_roles, role_permissions, user_sessions, password_policies, security_settings<br>
-3. **Rutas:** routes, stops, student_routes<br>
-4. **Zonas:** safe_zones<br>
-5. **Trayectos:** trips, coordinates<br>
-6. **Notificaciones:** notification_settings, notifications, notification_receipts<br>
-7. **Dispositivos:** user_devices, student_devices<br>
-8. **Auditoría:** activity_logs, audit_logs, error_logs<br>
+1. **Usuarios y estudiantes:** users, students, student_guardians, emergency_contacts
+2. **Seguridad:** roles, permissions, user_roles, role_permissions, user_sessions, password_policies, security_settings
+3. **Rutas:** routes, stops, student_routes
+4. **Zonas:** safe_zones
+5. **Trayectos:** trips, coordinates
+6. **Notificaciones:** notification_settings, notifications, notification_receipts
+7. **Dispositivos:** user_devices, student_devices
+8. **Auditoría:** activity_logs, audit_logs, error_logs
 
 ### 5.2 Relaciones principales
 
@@ -159,15 +152,15 @@ students 1──* student_devices
 
 ### 5.3 Atributos críticos
 
-| Tabla | Atributo | Nota de diseño |
-|---|---|---|
-| students | photo_data (TEXT) | Foto opcional |
-| safe_zones | radius_meters | CHECK > 0 |
-| safe_zones | inactivity_alert_seconds | Default 300 |
-| trips | had_route_deviation | Flag de desvío |
-| coordinates | speed_kmh, stopped_seconds | Telemetría |
-| users | email | CHECK regex TLD restringido |
-| student_devices | device_identifier | UNIQUE |
+| Tabla           | Atributo                   | Nota de diseño             |
+| --------------- | -------------------------- | --------------------------- |
+| students        | photo_data (TEXT)          | Foto opcional               |
+| safe_zones      | radius_meters              | CHECK > 0                   |
+| safe_zones      | inactivity_alert_seconds   | Default 300                 |
+| trips           | had_route_deviation        | Flag de desvío             |
+| coordinates     | speed_kmh, stopped_seconds | Telemetría                 |
+| users           | email                      | CHECK regex TLD restringido |
+| student_devices | device_identifier          | UNIQUE                      |
 
 ### 5.4 Gobernanza del esquema
 
@@ -189,13 +182,5 @@ students 1──* student_devices
 - Timeouts de conexión/lectura configurables.
 - Caché con TTL diferenciado (geocoding vs directions).
 - Reintentos, circuit breaker y límite de peticiones por minuto.
-
-## 8. Registro de actualización
-
-| Fecha | Cambio | Motivo |
-|---|---|---|
-| 2026-10-09 | Arquitectura, patrones, UI, API y modelo de datos alineados al código | Lista 2.5.4 “Revisar o actualizar” |
-
-## Actualización técnica — 28 de octubre de 2026
 
 La actualización documenta tokens de sesión y códigos de enlace protegidos, identificador de dispositivo, límite de intentos, acceso de acudientes y validación de trayectos. La base separa rol de aplicación y administrador, incluye cambios de auditoría y direcciones, y expone retención manual restringida de coordenadas. Los diagramas UML conservados siguen siendo referencias históricas.

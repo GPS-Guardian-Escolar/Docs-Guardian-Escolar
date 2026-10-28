@@ -1,15 +1,8 @@
 # Artículo del proyecto — GPS Guardian Escolar
 
-**Versión:** 2026-10-28<br>
-**Estado:** Actualizado desde código y evidencia disponible al 28 de octubre de 2026<br>
+**Versión:** 2026-10-28
+**Estado:** Actualizado desde código y evidencia disponible al 28 de octubre de 2026
 **Nota:** Este artículo describe el sistema a partir del código y la documentación técnica del paquete. No presenta resultados empíricos de campo no medidos.
-
-
-**Versión documental:** 2.5.5<br>
-**Corte de código:** 2026-10-28<br>
-**Snapshots:** Backend `345a8b3`; Frontend `d0648c1`; DB `e6b84c5`; Infra `d06a61c`.<br>
-**Evidencia:** revisión estática; ejecución de CI y validación en dispositivos pendientes.
----
 
 ## Resumen
 
@@ -77,7 +70,5 @@ GPS Guardian Escolar materializa un diseño coherente cliente-servidor para el s
 - Propuesta técnica y diseño de software (paquetes 03 y 04).
 - Documentación de pruebas e implementación (paquetes 05 y 06).
 - Código fuente de Backend, Frontend, DB-Structure y Docker-Infra analizado en octubre de 2026.
-
-## Actualización técnica — 28 de octubre de 2026
 
 La revisión estática al 28 de octubre identifica mejoras de autenticación por dispositivo, limitación de intentos, sesiones y códigos protegidos, acceso compartido, contratos de rutas/trayectos y bootstrap administrativo. Frontend actualiza QR/vinculación, EAS y descarga Android condicionada por URL. No se atribuyen mediciones de campo, CI aprobado, GPS continuo, entrega de notificaciones ni descarga comprobada de APK.

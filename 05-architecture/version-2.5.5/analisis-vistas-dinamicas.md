@@ -1,15 +1,8 @@
 # Documentación de análisis del software — Vistas dinámicas
 
-**Proyecto:** GPS Guardian Escolar<br>
-**Versión:** 2026-10-28 (actualizada desde código)<br>
+**Proyecto:** GPS Guardian Escolar
+**Versión:** 2026-10-28
 **Estado:** Revisado y actualizado
-
-
-**Versión documental:** 2.5.5<br>
-**Corte de código:** 2026-10-28<br>
-**Snapshots:** Backend `345a8b3`; Frontend `d0648c1`; DB `e6b84c5`; Infra `d06a61c`.<br>
-**Evidencia:** revisión estática; ejecución de CI y validación en dispositivos pendientes.
----
 
 ## 1. Objetivo
 
@@ -106,30 +99,22 @@ EstudianteApp          Backend              PostgreSQL           AcudienteApp
 
 ## 5. Estados relevantes
 
-| Entidad | Estados / flags en código o BD |
-|---|---|
-| Usuario | is_active, email_verified, two_factor_enabled, deleted_at |
-| Sesión | session_status (enum), email_confirmed |
-| Guardian | PENDING, ACTIVE, REVOKED |
-| Trayecto | trip_status_enum (p. ej. PENDING y transiciones vía PATCH status) |
-| Zona | is_active, deleted_at |
-| Notificación recibo | was_read |
+| Entidad              | Estados / flags en código o BD                                    |
+| -------------------- | ------------------------------------------------------------------ |
+| Usuario              | is_active, email_verified, two_factor_enabled, deleted_at          |
+| Sesión              | session_status (enum), email_confirmed                             |
+| Guardian             | PENDING, ACTIVE, REVOKED                                           |
+| Trayecto             | trip_status_enum (p. ej. PENDING y transiciones vía PATCH status) |
+| Zona                 | is_active, deleted_at                                              |
+| Notificación recibo | was_read                                                           |
 
 ## 6. Dependencias externas dinámicas
 
-| Dependencia | Activación | Efecto si no está disponible |
-|---|---|---|
+| Dependencia | Activación         | Efecto si no está disponible                                       |
+| ----------- | ------------------- | ------------------------------------------------------------------- |
 | Google Maps | GOOGLE_MAPS_API_KEY | Fallo controlado en /api/maps (circuit breaker / error de servicio) |
-| SMTP | APP_MAIL_ENABLED | Sin envío real de correo |
-| Expo Push | EXPO_PUSH_ENABLED | Notificaciones solo persistidas / in-app |
-| SMS | SMS_ENABLED | Canal SMS inactivo |
-
-## 7. Registro de actualización
-
-| Fecha | Cambio | Motivo |
-|---|---|---|
-| 2026-10-09 | Flujos y secuencias alineados a controladores, WebSocket y tablas reales | Lista 2.5.4 “Revisar o actualizar”; prioridad del código |
-
-## Actualización técnica — 28 de octubre de 2026
+| SMTP        | APP_MAIL_ENABLED    | Sin envío real de correo                                           |
+| Expo Push   | EXPO_PUSH_ENABLED   | Notificaciones solo persistidas / in-app                            |
+| SMS         | SMS_ENABLED         | Canal SMS inactivo                                                  |
 
 Los flujos incorporan autenticación por dispositivo, respuesta limitada ante intentos repetidos, protección de sesión y vinculación QR con código de uso controlado. Los estados de trayecto y el acceso compartido se validan en backend; notificaciones por correo, push y WebSocket dependen de la configuración de cada proveedor. Validar en web y Android con cuentas de prueba.

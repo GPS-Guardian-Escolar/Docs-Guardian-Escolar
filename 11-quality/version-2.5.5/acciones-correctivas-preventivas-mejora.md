@@ -5,10 +5,8 @@
 **Estado:** Actualizada desde código y evidencia disponible al 28 de octubre de 2026
 
 
-**Versión documental:** 2.5.5<br>
-**Corte de código:** 2026-10-28<br>
-**Snapshots:** Backend `345a8b3`; Frontend `d0648c1`; DB `e6b84c5`; Infra `d06a61c`.<br>
-**Evidencia:** revisión estática; ejecución de CI y validación en dispositivos pendientes.
+**Revisión técnica:** análisis estático de los repositorios al 28 de octubre de 2026.<br>
+**Validación:** no se ejecutaron flujos de CI ni pruebas en dispositivos durante esta actualización.
 ---
 
 ## 1. Objetivo

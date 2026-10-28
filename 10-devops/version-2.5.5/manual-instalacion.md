@@ -1,22 +1,14 @@
 # Manual de instalación — GPS Guardian Escolar
 
-**Versión:** 2026-10-28<br>
-**Estado:** Actualizado desde código y evidencia disponible al 28 de octubre de 2026<br>
-**Audiencia:** quien despliega el entorno de desarrollo o demostración.
-
-
-**Versión documental:** 2.5.5<br>
-**Corte de código:** 2026-10-28<br>
-**Snapshots:** Backend `345a8b3`; Frontend `d0648c1`; DB `e6b84c5`; Infra `d06a61c`.<br>
-**Evidencia:** revisión estática; ejecución de CI y validación en dispositivos pendientes.
----
+**Versión:** 2026-10-28
+**Estado:** Actualizado desde código y evidencia disponible al 28 de octubre de 2026
 
 ## 1. Opciones de instalación
 
-| Opción | Cuándo usarla |
-|---|---|
-| A. Docker Compose | Demostración o entorno completo con un comando |
-| B. Componentes separados | Desarrollo activo de un solo repositorio |
+| Opción                  | Cuándo usarla                                  |
+| ------------------------ | ----------------------------------------------- |
+| A. Docker Compose        | Demostración o entorno completo con un comando |
+| B. Componentes separados | Desarrollo activo de un solo repositorio        |
 
 ## 2. Requisitos previos
 
@@ -50,11 +42,11 @@ docker compose --env-file .env up --build
 
 ### 3.3 Comprobar
 
-| URL | Esperado |
-|---|---|
-| http://localhost:8081 | Interfaz web |
+| URL                              | Esperado      |
+| -------------------------------- | ------------- |
+| http://localhost:8081            | Interfaz web  |
 | http://localhost:8080/api/health | Salud del API |
-| localhost:5432 | PostgreSQL |
+| localhost:5432                   | PostgreSQL    |
 
 El contenedor Liquibase aplica migraciones y termina.
 
@@ -103,13 +95,13 @@ npm run start:lan    # Metro :8082
 
 ## 6. Problemas frecuentes
 
-| Síntoma | Causa probable | Acción |
-|---|---|---|
+| Síntoma                       | Causa probable                          | Acción                               |
+| ------------------------------ | --------------------------------------- | ------------------------------------- |
 | Backend no arranca por esquema | Liquibase no aplicado o divergencia JPA | Reejecutar migrate; revisar entidades |
-| CORS en navegador | Origen no listado | Ajustar CORS_ALLOWED_ORIGINS |
-| App móvil no alcanza API | URL localhost en dispositivo | Usar IP LAN o tunnel |
-| Maps 5xx | API key ausente o cuota | Configurar GOOGLE_MAPS_API_KEY |
-| No llegan correos | APP_MAIL_ENABLED=false | Habilitar y configurar SMTP |
+| CORS en navegador              | Origen no listado                       | Ajustar CORS_ALLOWED_ORIGINS          |
+| App móvil no alcanza API      | URL localhost en dispositivo            | Usar IP LAN o tunnel                  |
+| Maps 5xx                       | API key ausente o cuota                 | Configurar GOOGLE_MAPS_API_KEY        |
+| No llegan correos              | APP_MAIL_ENABLED=false                  | Habilitar y configurar SMTP           |
 
 ## 7. Desinstalación
 
@@ -121,7 +113,5 @@ npm run start:lan    # Metro :8082
 - Cambiar contraseñas y JWT_SECRET por valores únicos.
 - No publicar `.env` ni claves Maps en repositorios públicos.
 - Limitar exposición de puertos en redes no confiables.
-
-## Actualización técnica — 28 de octubre de 2026
 
 El Compose actualizado ordena base saludable, Liquibase y servicios de aplicación. En producción, crear el administrador mediante contexto bootstrap una sola vez y después retirar las variables de bootstrap. Configurar EAS y `EXPO_PUBLIC_ANDROID_APK_URL` para publicar descarga; probar firma, instalación, QR y permisos en Android. La configuración no demuestra que haya un APK disponible.

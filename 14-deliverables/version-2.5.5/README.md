@@ -1,9 +1,9 @@
-# GPS Guardian Escolar — documentación actualizada
+# Entrega documental actualizada — GPS Guardian Escolar
 
-**Corte documental:** 28 de octubre de 2026 (`2026-10-28`)<br>
-**Versión:** 2.5.5<br>
-**Base de evidencia:** snapshots de código indicados en `AUDITORIA_Y_MATRIZ_DE_ENTREGA.md`.
+Paquete de documentos técnicos y académicos revisados al 28 de octubre de 2026, con portadas normalizadas al formato institucional SENA.
 
-`Documentos_actualizados_y_nuevos` contiene los 12 DOCX actualizados y el artículo Markdown. `PDF_nuevos` contiene sus PDF correspondientes. Las portadas mantienen la composición original y muestran fecha y versión nuevas; cada DOCX/PDF agrega un anexo técnico con cambios y límites de verificación.
+- `Documentos_actualizados_y_nuevos`: 12 documentos DOCX y el artículo del proyecto en Markdown.
+- `PDF_nuevos`: versiones PDF de los 12 documentos.
+- `AUDITORIA_Y_MATRIZ_DE_ENTREGA.md`: cambios técnicos identificados y límites de verificación.
 
-La entrega fuente del 16 de octubre se conserva intacta en la carpeta histórica. La auditoría distingue entre código presente, workflows configurados y pruebas ejecutadas; no se declaran pruebas ni despliegues no realizados.
+La revisión fue estática. No se ejecutaron pruebas, compilaciones ni despliegues; las validaciones pendientes se describen en cada documento.

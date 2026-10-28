@@ -1,15 +1,7 @@
 # Informe de especificación de requisitos — GPS Guardian Escolar
 
-**Versión:** 2026-10-28 (actualizada desde código)<br>
-**Estado:** Revisado y actualizado<br>
-**Tipo de cambio:** Alineación con implementación real (Backend, Frontend, BD, Docker). Se eliminan o matizan afirmaciones no respaldadas por el código.
-
-
-**Versión documental:** 2.5.5<br>
-**Corte de código:** 2026-10-28<br>
-**Snapshots:** Backend `345a8b3`; Frontend `d0648c1`; DB `e6b84c5`; Infra `d06a61c`.<br>
-**Evidencia:** revisión estática; ejecución de CI y validación en dispositivos pendientes.
----
+**Versión:** 2026-10-28 (actualizada desde código)
+**Estado:** Revisado y actualizado
 
 ## 1. Propósito
 
@@ -39,12 +31,12 @@ Definir los requisitos funcionales y no funcionales del sistema **GPS Guardian E
 
 ## 3. Actores
 
-| Actor | Descripción |
-|---|---|
-| Acudiente / Guardian | Usuario que registra estudiantes, define rutas y zonas, consulta seguimiento. |
+| Actor                              | Descripción                                                                           |
+| ---------------------------------- | -------------------------------------------------------------------------------------- |
+| Acudiente / Guardian               | Usuario que registra estudiantes, define rutas y zonas, consulta seguimiento.          |
 | Estudiante (dispositivo vinculado) | Dispositivo móvil vinculado por QR/enlace que reporta ubicación durante el trayecto. |
-| Administrador | Usuario con acceso a `/api/admin` (dashboard, alertas, auditoría, errores). |
-| Sistema | Backend, base de datos, servicios de correo, push y SMS según flags de entorno. |
+| Administrador                      | Usuario con acceso a `/api/admin` (dashboard, alertas, auditoría, errores).         |
+| Sistema                            | Backend, base de datos, servicios de correo, push y SMS según flags de entorno.       |
 
 ## 4. Requisitos funcionales
 
@@ -104,17 +96,17 @@ Definir los requisitos funcionales y no funcionales del sistema **GPS Guardian E
 
 ## 5. Requisitos no funcionales
 
-| ID | Categoría | Requisito |
-|---|---|---|
-| RNF-01 | Seguridad | Autenticación JWT; endpoints sensibles protegidos; WebSocket con Bearer en CONNECT. |
-| RNF-02 | Seguridad | Secretos (JWT, Maps, SMS, correo) solo por variables de entorno. |
-| RNF-03 | Disponibilidad | Health en `/` y `/api/health`; Actuator (health, info, metrics, prometheus). |
-| RNF-04 | Portabilidad | Cliente multiplataforma (iOS, Android, Web) con Expo 57. |
-| RNF-05 | Persistencia | PostgreSQL 15; esquema gobernado por Liquibase; Hibernate en modo validate. |
-| RNF-06 | Despliegue | Docker Compose: database, liquibase, backend (8080), frontend Nginx (8081). |
-| RNF-07 | Resiliencia Maps | Caché Caffeine, rate limit, reintentos y circuit breaker (Resilience4j). |
-| RNF-08 | Privacidad | Ubicación solo en contexto de trayecto; permisos de ubicación y cámara declarados en la app. |
-| RNF-09 | Usabilidad | Interfaz en español; flujos de auth, QR y mapas orientados a acudiente y estudiante. |
+| ID     | Categoría       | Requisito                                                                                       |
+| ------ | ---------------- | ----------------------------------------------------------------------------------------------- |
+| RNF-01 | Seguridad        | Autenticación JWT; endpoints sensibles protegidos; WebSocket con Bearer en CONNECT.            |
+| RNF-02 | Seguridad        | Secretos (JWT, Maps, SMS, correo) solo por variables de entorno.                                |
+| RNF-03 | Disponibilidad   | Health en `/` y `/api/health`; Actuator (health, info, metrics, prometheus).                |
+| RNF-04 | Portabilidad     | Cliente multiplataforma (iOS, Android, Web) con Expo 57.                                        |
+| RNF-05 | Persistencia     | PostgreSQL 15; esquema gobernado por Liquibase; Hibernate en modo validate.                     |
+| RNF-06 | Despliegue       | Docker Compose: database, liquibase, backend (8080), frontend Nginx (8081).                     |
+| RNF-07 | Resiliencia Maps | Caché Caffeine, rate limit, reintentos y circuit breaker (Resilience4j).                       |
+| RNF-08 | Privacidad       | Ubicación solo en contexto de trayecto; permisos de ubicación y cámara declarados en la app. |
+| RNF-09 | Usabilidad       | Interfaz en español; flujos de auth, QR y mapas orientados a acudiente y estudiante.           |
 
 ## 6. Restricciones
 
@@ -125,23 +117,13 @@ Definir los requisitos funcionales y no funcionales del sistema **GPS Guardian E
 
 ## 7. Trazabilidad hacia implementación
 
-| Requisito | Evidencia en código |
-|---|---|
-| RF-01 | `AuthController`, servicios de email y 2FA |
-| RF-02 | `StudentController`, `EmergencyContactController`, tabla `students.photo_data` |
-| RF-03 | `RouteController`, tablas `routes`, `stops`, `student_routes` |
-| RF-04 | `SafeZoneController`, tabla `safe_zones.radius_meters` |
-| RF-05 | `TripController`, `WebSocketConfig`, tablas `trips`, `coordinates` |
-| RF-06 | `MapsController`, módulo `maps` |
-| RF-07 | `NotificationController`, `UserDeviceController` |
-| RF-08 | `AdminController` |
-
-## 8. Registro de actualización
-
-| Fecha | Cambio | Motivo |
-|---|---|---|
-| 2026-10-09 | Reescritura alineada a endpoints, tablas y stacks reales | Prioridad del código sobre documentación histórica; lista 2.5.4 “Revisar o actualizar” |
-
-## Actualización técnica — 28 de octubre de 2026
-
-La versión actual incorpora identificador de dispositivo, limitación de intentos de autenticación, sesiones revocables y tokens protegidos por hash. Se actualizan los flujos de vinculación de estudiantes, códigos de enlace de un solo uso, errores de API y contratos de direcciones de rutas/paradas. La aceptación en entorno productivo y dispositivos sigue pendiente.
+| Requisito | Evidencia en código                                                                 |
+| --------- | ------------------------------------------------------------------------------------ |
+| RF-01     | `AuthController`, servicios de email y 2FA                                         |
+| RF-02     | `StudentController`, `EmergencyContactController`, tabla `students.photo_data` |
+| RF-03     | `RouteController`, tablas `routes`, `stops`, `student_routes`                |
+| RF-04     | `SafeZoneController`, tabla `safe_zones.radius_meters`                           |
+| RF-05     | `TripController`, `WebSocketConfig`, tablas `trips`, `coordinates`           |
+| RF-06     | `MapsController`, módulo `maps`                                                 |
+| RF-07     | `NotificationController`, `UserDeviceController`                                 |
+| RF-08     | `AdminController`                                                                  |

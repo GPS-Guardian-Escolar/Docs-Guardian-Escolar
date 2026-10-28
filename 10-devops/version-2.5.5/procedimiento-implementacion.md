@@ -1,15 +1,8 @@
 # Procedimiento de implementación del software
 
-**Proyecto:** GPS Guardian Escolar<br>
-**Versión:** 2026-10-28<br>
+**Proyecto:** GPS Guardian Escolar
+**Versión:** 2026-10-28
 **Estado:** Actualizado desde código y evidencia disponible al 28 de octubre de 2026
-
-
-**Versión documental:** 2.5.5<br>
-**Corte de código:** 2026-10-28<br>
-**Snapshots:** Backend `345a8b3`; Frontend `d0648c1`; DB `e6b84c5`; Infra `d06a61c`.<br>
-**Evidencia:** revisión estática; ejecución de CI y validación en dispositivos pendientes.
----
 
 ## 1. Objetivo
 
@@ -17,13 +10,13 @@ Describir un procedimiento reproducible para desplegar el sistema en entorno loc
 
 ## 2. Prerrequisitos
 
-| Herramienta | Uso |
-|---|---|
-| Docker + Docker Compose | Stack completo |
-| Java 17 + Maven Wrapper | Backend fuera de Docker |
-| Node.js (compatible Expo 57) + npm | Frontend fuera de Docker |
-| Cliente PostgreSQL (opcional) | Inspección de datos |
-| Git | Obtención de repositorios |
+| Herramienta                        | Uso                        |
+| ---------------------------------- | -------------------------- |
+| Docker + Docker Compose            | Stack completo             |
+| Java 17 + Maven Wrapper            | Backend fuera de Docker    |
+| Node.js (compatible Expo 57) + npm | Frontend fuera de Docker   |
+| Cliente PostgreSQL (opcional)      | Inspección de datos       |
+| Git                                | Obtención de repositorios |
 
 Repositorios necesarios (rutas relativas típicas del monorepo de trabajo):
 
@@ -82,7 +75,7 @@ docker compose --env-file .env up --build
    - http://localhost:8080/api/health (backend)
    - PostgreSQL en 5432
 5. El servicio `liquibase` debe completar `update` una vez y salir.
-6. Detener conservando datos: `docker compose down`<br>
+6. Detener conservando datos: `docker compose down`
    Borrar volumen de datos: `docker compose down -v`
 
 ## 5. Procedimiento B — Componentes separados
@@ -116,24 +109,24 @@ docker compose --env-file .env up --build
 
 ## 6. Orden de arranque recomendado
 
-1. Database healthy<br>
-2. Liquibase update<br>
-3. Backend<br>
-4. Frontend<br>
+1. Database healthy
+2. Liquibase update
+3. Backend
+4. Frontend
 
 ## 7. Verificación post-implementación
 
-| Chequeo | Criterio de éxito |
-|---|---|
-| Health backend | Respuesta OK en `/api/health` |
-| Frontend carga | UI de welcome/login visible |
-| Registro/login | Obtención de JWT |
-| Migraciones | Tablas y seeds de catálogo presentes |
-| Proxy Docker | `/api` y `/ws` desde el origen 8081 |
+| Chequeo        | Criterio de éxito                      |
+| -------------- | --------------------------------------- |
+| Health backend | Respuesta OK en `/api/health`         |
+| Frontend carga | UI de welcome/login visible             |
+| Registro/login | Obtención de JWT                       |
+| Migraciones    | Tablas y seeds de catálogo presentes   |
+| Proxy Docker   | `/api` y `/ws` desde el origen 8081 |
 
 ## 8. Rollback
 
-- Aplicación: volver a imagen/commit anterior y reiniciar contenedores.
+- Aplicación: volver a la imagen de la versión estable anterior y reiniciar contenedores.
 - Datos: restaurar volumen o backup de PostgreSQL; no usar `down -v` salvo entorno desechable.
 - Esquema: utilizar cambiosets de rollback de Liquibase cuando existan para el changeset afectado.
 
@@ -149,13 +142,5 @@ docker compose --env-file .env up --build
 - Bundle ID / package: `com.guardianescolar.app`.
 - Permisos de ubicación y cámara ya declarados en `app.json`.
 - Para tracking en background se requiere development build o binario nativo; Expo Go puede limitar capacidades de segundo plano.
-
-## 11. Registro
-
-| Fecha | Evento |
-|---|---|
-| 2026-10-09 | Procedimiento creado como entregable faltante 2.5.4 |
-
-## Actualización técnica — 28 de octubre de 2026
 
 Compose espera salud de PostgreSQL antes de Liquibase, y migración completada antes de iniciar backend. El bootstrap inicial de administrador productivo requiere `LIQUIBASE_CONTEXTS=prod,bootstrap` y secretos inyectados; despliegues posteriores usan solo `prod`. Mantener `APP_DB_PASSWORD` separado de la cuenta administradora, respetar su mínimo documentado de 32 caracteres y no guardar secretos en Git. La URL `EXPO_PUBLIC_ANDROID_APK_URL` habilita el botón de descarga si existe artefacto vigente.
