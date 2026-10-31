@@ -7,6 +7,7 @@ Este repositorio reúne la documentación técnica y académica del proyecto, or
 | Sección | Contenido |
 |---|---|
 | [Gobernanza](./00-governance/) | Catálogo y estado de los entregables recibidos |
+| [Trazabilidad de HUs](./00-governance/hus/hu-trazabilidad.md) | Mapa de historias con entregables documentales y limites de verificacion |
 | [Producto](./03-product/) | Propuestas técnicas y publicaciones del proyecto |
 | [Requisitos](./04-requirements/) | [Especificación funcional y trazabilidad](./04-requirements/version-3.0/functional-requirements.md) |
 | [Arquitectura](./05-architecture/) | Análisis de vistas dinámicas y diseño de software |
@@ -23,3 +24,8 @@ Los documentos mantienen su organización técnica y académica, con las portada
 
 La revisión documental 2.5.5 tiene corte al 28 de octubre de 2026. Consulta el [catálogo de entregables](./00-governance/catalogo-entregables-2026-10-28.md) y descarga los [DOCX y PDF versionados](./14-deliverables/version-2.5.5/). La auditoría separa código presente de pruebas ejecutadas; el paquete incluye portadas SENA uniformes para los doce documentos.
 
+Los documentos conservan el formato en que fueron entregados. Las carpetas `version-1.0`, `version-2.0` y `version-2.5.4` mantienen separados los lotes recibidos y sus revisiones; consulta la fecha y el estado indicados dentro de cada documento antes de usarlo como referencia vigente.
+
+La documentacion vigente de las HU se mantiene en `00-governance/hus`, `03-product/version-2.5.4`, `04-requirements/version-2.5.4`, `05-architecture/decisions/records`, `06-data/version-2.5.4`, `07-api/contracts/openapi`, `10-devops/version-2.5.4` y `11-quality/version-2.5.4`. Los repositorios de codigo conservan solo la documentacion minima necesaria para poder construir y ejecutar cada componente.
+
+La documentacion tecnica recuperada del Frontend esta en [`09-modules/version-2.5.4/frontend-technical-documentation/`](./09-modules/version-2.5.4/frontend-technical-documentation/). Su origen historico es el commit `27dc49a` de la rama `docs/frontend-technical-documentation-develop` del Frontend; la copia vigente se mantiene en este repositorio Docs.
