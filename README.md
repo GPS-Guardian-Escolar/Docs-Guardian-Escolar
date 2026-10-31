@@ -6,7 +6,7 @@ Este repositorio reúne la documentación técnica y académica del proyecto, or
 
 | Sección | Contenido |
 |---|---|
-| [Gobernanza](./00-governance/) | Catálogo y estado de los entregables recibidos |
+| [Gobernanza](./00-governance/) | Catálogo, estado de entregables y reglas de Pull Requests |
 | [Trazabilidad de HUs](./00-governance/hus/hu-trazabilidad.md) | Mapa de historias con entregables documentales y limites de verificacion |
 | [Producto](./03-product/) | Propuestas técnicas y publicaciones del proyecto |
 | [Requisitos](./04-requirements/) | [Especificación funcional y trazabilidad](./04-requirements/version-3.0/functional-requirements.md) |
@@ -17,6 +17,9 @@ Este repositorio reúne la documentación técnica y académica del proyecto, or
 | [Calidad](./11-quality/) | Planes de prueba y acciones correctivas |
 | [Operaciones](./13-operations/) | Manual de usuario final |
 | [Entregables DOCX/PDF](./14-deliverables/version-2.5.5/) | Paquete fechado de documentos actualizados y matriz de evidencia |
+
+La gobernanza de cambios está definida en [Pull Request Governance](./00-governance/pull-request-governance.md),
+incluyendo revisión independiente, alcance máximo recomendado, trazabilidad de HUs y cierre del tablero.
 
 Los documentos mantienen su organización técnica y académica, con las portadas normalizadas al formato institucional SENA. Las carpetas `version-1.0`, `version-2.0`, `version-2.5.4` y `version-2.5.5` mantienen separados los lotes recibidos y sus revisiones; consulta la fecha y el estado indicados dentro de cada documento antes de usarlo como referencia vigente.
 

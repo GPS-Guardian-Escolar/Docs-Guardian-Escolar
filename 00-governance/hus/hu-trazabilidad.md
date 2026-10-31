@@ -15,6 +15,7 @@
 | H-30, H-32, H-41, H-42, H-43 | Este repositorio y sus indices | Centralizado |
 | H-31 | [Documentacion tecnica recuperada del Frontend](../../09-modules/version-2.5.4/frontend-technical-documentation/) | Recuperada desde el commit historico `27dc49a` y centralizada |
 | H-33, H-34, H-66 | [Proceso y trazabilidad](../../11-quality/version-2.5.4/proceso-trazabilidad.md) | Requiere configuracion de GitHub |
+| H-77 | [Gobernanza de Pull Requests](../pull-request-governance.md) | Reglas de revision, alcance, consolidacion y cierre |
 | H-44, H-51, H-58, H-59 | [Datos, privacidad y retencion](../../06-data/version-2.5.4/datos-privacidad-retencion.md) | Politica propuesta; requiere aprobacion legal y tecnica |
 | H-62, H-65 | [Contrato API](../../07-api/contracts/openapi/version-1/README.md) | Especificacion documental; falta publicar el contrato generado |
 | H-20, H-21, H-22 | [Plan de pruebas y gates](../../11-quality/version-2.5.4/plan-pruebas-hu.md) | Pruebas locales disponibles; CI externo pendiente |
