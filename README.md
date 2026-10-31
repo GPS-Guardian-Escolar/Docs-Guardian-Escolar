@@ -9,7 +9,7 @@ Este repositorio reúne la documentación técnica y académica del proyecto, or
 | [Gobernanza](./00-governance/) | Catálogo y estado de los entregables recibidos |
 | [Trazabilidad de HUs](./00-governance/hus/hu-trazabilidad.md) | Mapa de historias con entregables documentales y limites de verificacion |
 | [Producto](./03-product/) | Propuestas técnicas y publicaciones del proyecto |
-| [Requisitos](./04-requirements/) | Especificaciones de requisitos |
+| [Requisitos](./04-requirements/) | [Especificación funcional y trazabilidad](./04-requirements/version-3.0/functional-requirements.md) |
 | [Arquitectura](./05-architecture/) | Análisis de vistas dinámicas y diseño de software |
 | [UML](./08-uml/) | [Índice de diagramas](./08-uml/diagram-index.md), fuentes Draw.io y exportaciones PDF |
 | [Módulos](./09-modules/) | Manual técnico e inventario de repositorios |
