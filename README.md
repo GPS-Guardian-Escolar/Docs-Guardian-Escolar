@@ -11,15 +11,12 @@ Este repositorio reúne la documentación técnica y académica del proyecto, or
 | [Producto](./03-product/) | Propuestas técnicas y publicaciones del proyecto |
 | [Requisitos](./04-requirements/) | [Especificación funcional y trazabilidad](./04-requirements/version-3.0/functional-requirements.md) |
 | [Arquitectura](./05-architecture/) | Análisis de vistas dinámicas y diseño de software |
-| [Datos](./06-data/) | Políticas de privacidad/retención y delta de migración 2.5.6 |
-| [API](./07-api/contracts/openapi/version-2.5.6/README.md) | Cambios de endpoints cotejados; OpenAPI completa pendiente |
 | [UML](./08-uml/) | [Índice de diagramas](./08-uml/diagram-index.md), fuentes Draw.io y exportaciones PDF |
 | [Módulos](./09-modules/) | Manual técnico e inventario de repositorios |
 | [DevOps](./10-devops/) | Instalación, implementación y despliegue; [suplemento Render 2.5.6](./10-devops/version-2.5.6/) |
 | [Calidad](./11-quality/) | Planes de prueba y acciones correctivas |
 | [Operaciones](./13-operations/) | Manual de usuario final |
-| [Entregables DOCX/PDF](./14-deliverables/version-2.5.5/) | Paquete fechado 2.5.5 conservado como fuente histórica |
-| [Entrega final 2.5.6](./14-deliverables/version-2.5.6/) | Adenda SRS, artículo APA 7, matriz y estructura de entrega final |
+| [Entregables DOCX/PDF](./14-deliverables/version-2.5.5/) | Paquete fechado de documentos actualizados y matriz de evidencia |
 
 La gobernanza de cambios está definida en [Pull Request Governance](./00-governance/pull-request-governance.md),
 incluyendo revisión independiente, alcance máximo recomendado, trazabilidad de HUs y cierre del tablero.
@@ -28,7 +25,7 @@ Los documentos mantienen su organización técnica y académica, con las portada
 
 ## Versión vigente
 
-La actualización documental más reciente es 2.5.6, con corte al 5 de noviembre de 2026. Consulta el [catálogo vigente](./00-governance/catalogo-entregables-2026-11-05.md) y el [paquete final](./14-deliverables/version-2.5.6/). El paquete 2.5.5 conserva los [doce DOCX/PDF históricos](./14-deliverables/version-2.5.5/) sin sobrescritura; 2.5.6 añade una adenda limitada al SRS y complementos por producto. La auditoría separa código inspeccionado de pruebas y operación verificadas.
+La revisión documental 2.5.5 tiene corte al 28 de octubre de 2026. Consulta el [catálogo de entregables](./00-governance/catalogo-entregables-2026-10-28.md) y descarga los [DOCX y PDF versionados](./14-deliverables/version-2.5.5/). La auditoría separa código presente de pruebas ejecutadas; el paquete incluye portadas SENA uniformes para los doce documentos.
 
 El suplemento operativo de Render 2.5.6 está en [10-devops/version-2.5.6](./10-devops/version-2.5.6/). Complementa los entregables 2.5.5 y no certifica el estado actual del servicio; sus límites y pendientes están descritos en el informe de revisión documental.
 
