@@ -29,7 +29,7 @@ La revisión documental 2.5.5 tiene corte al 28 de octubre de 2026. Consulta el 
 
 El suplemento operativo de Render 2.5.6 está en [10-devops/version-2.5.6](./10-devops/version-2.5.6/). Complementa los entregables 2.5.5 y no certifica el estado actual del servicio; sus límites y pendientes están descritos en el informe de revisión documental.
 
-Los documentos conservan el formato en que fueron entregados. Las carpetas `version-1.0`, `version-2.0` y `version-2.5.4` mantienen separados los lotes recibidos y sus revisiones; consulta la fecha y el estado indicados dentro de cada documento antes de usarlo como referencia vigente.
+Los lotes originales se conservan en carpetas versionadas y las revisiones indican su fecha y alcance. Consulta el estado de cada documento antes de usarlo como referencia vigente.
 
 La documentacion vigente de las HU se mantiene en `00-governance/hus`, `03-product/version-2.5.4`, `04-requirements/version-2.5.4`, `05-architecture/decisions/records`, `06-data/version-2.5.4`, `07-api/contracts/openapi`, `10-devops/version-2.5.4` y `11-quality/version-2.5.4`. Los repositorios de codigo conservan solo la documentacion minima necesaria para poder construir y ejecutar cada componente.
 
