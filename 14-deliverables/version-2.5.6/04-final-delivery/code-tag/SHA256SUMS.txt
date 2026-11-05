@@ -1,0 +1,5 @@
+# GPS Guardian Escolar — estado al 2026-11-05
+# Pendiente: no se localizaron ZIP de Release para final-delivery-2026.
+# Añadir solo hashes calculados sobre ZIP definitivos publicados.
+# Formato: <SHA256>  <nombre-exacto-del-archivo.zip> (dos ZIP por repositorio)
+# Repositorios: Backend-Guardian-Escolar; Fronted-GuardianEscolar-; DB-Structure-Guardian-Escolar; Docker-Infra-Guardian-Escolar.
