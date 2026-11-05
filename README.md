@@ -13,7 +13,7 @@ Este repositorio reúne la documentación técnica y académica del proyecto, or
 | [Arquitectura](./05-architecture/) | Análisis de vistas dinámicas y diseño de software |
 | [UML](./08-uml/) | [Índice de diagramas](./08-uml/diagram-index.md), fuentes Draw.io y exportaciones PDF |
 | [Módulos](./09-modules/) | Manual técnico e inventario de repositorios |
-| [DevOps](./10-devops/) | Instalación, implementación y despliegue |
+| [DevOps](./10-devops/) | Instalación, implementación y despliegue; [suplemento Render 2.5.6](./10-devops/version-2.5.6/) |
 | [Calidad](./11-quality/) | Planes de prueba y acciones correctivas |
 | [Operaciones](./13-operations/) | Manual de usuario final |
 | [Entregables DOCX/PDF](./14-deliverables/version-2.5.5/) | Paquete fechado de documentos actualizados y matriz de evidencia |
@@ -21,11 +21,13 @@ Este repositorio reúne la documentación técnica y académica del proyecto, or
 La gobernanza de cambios está definida en [Pull Request Governance](./00-governance/pull-request-governance.md),
 incluyendo revisión independiente, alcance máximo recomendado, trazabilidad de HUs y cierre del tablero.
 
-Los documentos mantienen su organización técnica y académica, con las portadas normalizadas al formato institucional SENA. Las carpetas `version-1.0`, `version-2.0`, `version-2.5.4` y `version-2.5.5` mantienen separados los lotes recibidos y sus revisiones; consulta la fecha y el estado indicados dentro de cada documento antes de usarlo como referencia vigente.
+Los documentos mantienen su organización técnica y académica, con las portadas normalizadas al formato institucional SENA. Las carpetas `version-1.0`, `version-2.0`, `version-2.5.4`, `version-2.5.5` y `version-2.5.6` mantienen separados los lotes recibidos y sus revisiones; consulta la fecha y el estado indicados dentro de cada documento antes de usarlo como referencia vigente.
 
 ## Versión vigente
 
 La revisión documental 2.5.5 tiene corte al 28 de octubre de 2026. Consulta el [catálogo de entregables](./00-governance/catalogo-entregables-2026-10-28.md) y descarga los [DOCX y PDF versionados](./14-deliverables/version-2.5.5/). La auditoría separa código presente de pruebas ejecutadas; el paquete incluye portadas SENA uniformes para los doce documentos.
+
+El suplemento operativo de Render 2.5.6 está en [10-devops/version-2.5.6](./10-devops/version-2.5.6/). Complementa los entregables 2.5.5 y no certifica el estado actual del servicio; sus límites y pendientes están descritos en el informe de revisión documental.
 
 Los documentos conservan el formato en que fueron entregados. Las carpetas `version-1.0`, `version-2.0` y `version-2.5.4` mantienen separados los lotes recibidos y sus revisiones; consulta la fecha y el estado indicados dentro de cada documento antes de usarlo como referencia vigente.
 
